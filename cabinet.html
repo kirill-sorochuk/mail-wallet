@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Кошелёк — Кирилл Сорочук</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cabinet.css">
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="topbar__left">
+      <a href="index.html" class="topbar__back"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></a>
+      <span class="topbar__title">Кошелёк</span>
+    </div>
+    <div class="topbar__right">
+      <button class="topbar__btn" id="notifBtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg><span class="topbar__badge" id="notifBadge">5</span></button>
+      <button class="topbar__avatar" id="profileBtn">КС</button>
+    </div>
+  </div>
+  <div class="dropdown" id="notifPanel"><div class="dropdown__header"><span>Уведомления</span><button class="dropdown__link" id="readAllBtn">Прочитать все</button></div><div class="dropdown__list"><div class="notif notif--unread"><div class="notif__icon notif__icon--blue">₽</div><div class="notif__body"><div class="notif__title">Зачисление зарплаты</div><div class="notif__text">+85 000 ₽ на карту МИР</div><div class="notif__time">5 мин назад</div></div></div><div class="notif notif--unread"><div class="notif__icon notif__icon--green">✓</div><div class="notif__body"><div class="notif__title">Новый чек от Пятёрочка</div><div class="notif__text">Фискальный документ сохранён в Диск</div><div class="notif__time">32 мин назад</div></div></div><div class="notif notif--unread"><div class="notif__icon notif__icon--orange">!</div><div class="notif__body"><div class="notif__title">Счёт от Ростелеком</div><div class="notif__text">1 200 ₽ — оплатите из письма</div><div class="notif__time">1 ч назад</div></div></div><div class="notif notif--unread"><div class="notif__icon notif__icon--blue">★</div><div class="notif__body"><div class="notif__title">ИИ-саммари готово</div><div class="notif__text">Еженедельный дайджест ваших финансов</div><div class="notif__time">2 ч назад</div></div></div><div class="notif notif--unread"><div class="notif__icon notif__icon--green">С</div><div class="notif__body"><div class="notif__title">Поступление от клиента</div><div class="notif__text">ИП Сорочук: +45 000 ₽ от ООО «Веб-Студия»</div><div class="notif__time">3 ч назад</div></div></div></div></div>
+  <div class="dropdown" id="profilePanel"><div class="profile-header"><div class="profile-header__avatar">КС</div><div class="profile-header__info"><div class="profile-header__name">Кирилл Сорочук</div><div class="profile-header__email">k.sorochuk@mail.ru</div></div></div><div class="dropdown__list"><button class="dropdown__item" data-goto="cards"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><span>Мои карты</span></button><button class="dropdown__item" data-goto="analytics"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span>Аналитика</span></button><button class="dropdown__item" data-goto="cashback"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span>Кешбэк</span></button><button class="dropdown__item" data-goto="settings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg><span>Настройки</span></button><div class="dropdown__divider"></div><a href="index.html" class="dropdown__item dropdown__item--danger"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg><span>Выйти</span></a></div></div>
+  <div class="overlay" id="overlay"></div>
+  <div class="content" id="content">
+<!-- HOME -->
+<div class="screen active" id="screen-home">
+  <!-- Account Switcher -->
+  <div class="account-switcher" id="accountSwitcher">
+    <button class="acct-chip active" data-acct="personal"><div class="acct-chip__avatar" style="background:var(--blue)">КС</div>Личный</button>
+    <button class="acct-chip acct-chip--biz" data-acct="biz"><div class="acct-chip__avatar">ИП</div>ИП Сорочук</button>
+    <button class="acct-chip acct-chip--prem" data-acct="premium"><div class="acct-chip__avatar">АП</div>Анна Петрова <span class="acct-chip__badge">VIP</span></button>
+  </div>
+  <div id="acctContent"></div>
+</div><!-- TRANSFERS (unchanged) -->
+<div class="screen" id="screen-transfers">
+  <div class="screen-header"><h2>Переводы и платежи</h2></div>
+  <div class="seg-tabs"><button class="seg-tab active" data-seg="send">Перевести</button><button class="seg-tab" data-seg="request">Запросить</button><button class="seg-tab" data-seg="history">История</button></div>
+  <div class="seg-page active" id="seg-send">
+    <div class="form-group"><label class="form-label">Кому</label><input type="text" class="form-input" id="transferTo" placeholder="Номер телефона или email" autocomplete="off"></div>
+    <div class="chips"><button class="chip" data-contact="+7 (999) 123-45-67">Мама</button><button class="chip" data-contact="maria@mail.ru">Мария</button><button class="chip" data-contact="+7 (916) 555-33-22">Дима</button><button class="chip" data-contact="ip-sorochuk@mail.ru">ИП Счёт</button></div>
+    <div class="form-group"><label class="form-label">Сумма</label><div class="amount-input"><input type="number" class="form-input form-input--amount" id="transferAmount" placeholder="0" min="1"><span class="amount-input__suffix">₽</span></div></div>
+    <div class="form-group"><label class="form-label">Комментарий</label><input type="text" class="form-input" id="transferComment" placeholder="За ужин"></div>
+    <button class="btn-primary btn-full" id="transferSend">Отправить</button>
+  </div>
+  <div class="seg-page" id="seg-request">
+    <div class="form-group"><label class="form-label">От кого</label><input type="text" class="form-input" id="requestFrom" placeholder="Номер телефона или email"></div>
+    <div class="form-group"><label class="form-label">Сумма</label><div class="amount-input"><input type="number" class="form-input form-input--amount" id="requestAmount" placeholder="0" min="1"><span class="amount-input__suffix">₽</span></div></div>
+    <button class="btn-primary btn-full" id="requestSend">Отправить запрос</button>
+  </div>
+  <div class="seg-page" id="seg-history">
+    <div class="filter-chips"><button class="filter-chip active" data-filter="all">Все</button><button class="filter-chip" data-filter="income">Доходы</button><button class="filter-chip" data-filter="expense">Расходы</button></div>
+    <div class="tx-list" id="historyList">
+      <div class="tx-item" data-type="income"><div class="tx-item__icon tx-income">ЗП</div><div class="tx-item__info"><div class="tx-item__name">Зарплата ООО «Техноком»</div><div class="tx-item__meta">08.08, 10:30 · Карта МИР</div></div><div class="tx-item__amount tx-plus">+85 000 ₽</div></div>
+      <div class="tx-item" data-type="income"><div class="tx-item__icon tx-income">КЛ</div><div class="tx-item__info"><div class="tx-item__name">Оплата от «Веб-Студия»</div><div class="tx-item__meta">08.08, 09:15 · ИП счёт</div></div><div class="tx-item__amount tx-plus">+45 000 ₽</div></div>
+      <div class="tx-item" data-type="expense"><div class="tx-item__icon tx-expense">ЯМ</div><div class="tx-item__info"><div class="tx-item__name">Яндекс Маркет</div><div class="tx-item__meta">07.08, 18:45 · Покупка</div></div><div class="tx-item__amount">−4 290 ₽</div></div>
+      <div class="tx-item" data-type="income"><div class="tx-item__icon tx-income">МК</div><div class="tx-item__info"><div class="tx-item__name">Мария Кузнецова</div><div class="tx-item__meta">07.08, 14:20 · Перевод</div></div><div class="tx-item__amount tx-plus">+2 500 ₽</div></div>
+      <div class="tx-item" data-type="expense"><div class="tx-item__icon tx-expense">ПЯ</div><div class="tx-item__info"><div class="tx-item__name">Пятёрочка</div><div class="tx-item__meta">07.08, 12:30 · Продукты</div></div><div class="tx-item__amount">−3 847 ₽</div></div>
+      <div class="tx-item" data-type="expense"><div class="tx-item__icon tx-expense">ЯТ</div><div class="tx-item__info"><div class="tx-item__name">Яндекс Такси</div><div class="tx-item__meta">06.08, 23:15 · Поездка</div></div><div class="tx-item__amount">−680 ₽</div></div>
+      <div class="tx-item" data-type="expense"><div class="tx-item__icon tx-expense">ВК</div><div class="tx-item__info"><div class="tx-item__name">VK Музыка</div><div class="tx-item__meta">06.08, 00:00 · Подписка</div></div><div class="tx-item__amount">−199 ₽</div></div>
+      <div class="tx-item" data-type="expense"><div class="tx-item__icon tx-expense">СБ</div><div class="tx-item__info"><div class="tx-item__name">Сбербанк (пополнение)</div><div class="tx-item__meta">05.08, 09:00 · Входящее</div></div><div class="tx-item__amount tx-plus">+10 000 ₽</div></div>
+      <div class="tx-item" data-type="expense"><div class="tx-item__icon tx-expense">ПД</div><div class="tx-item__info"><div class="tx-item__name">Продам ДВ</div><div class="tx-item__meta">04.08, 12:00 · Объявление</div></div><div class="tx-item__amount">−1 250 ₽</div></div>
+    </div>
+  </div>
+</div><!-- MAIL (expanded with tabs) -->
+<div class="screen" id="screen-mail">
+  <div class="screen-header"><h2>Почта и документы</h2></div>
+  <p class="screen-desc">ИИ автоматически распознаёт счета и чеки из писем Mail.ru. Оплата в один тап.</p>
+  <div class="seg-tabs"><button class="seg-tab active" data-seg="mail-letters">Письма</button><button class="seg-tab" data-seg="mail-summary">Саммари</button><button class="seg-tab" data-seg="mail-checks">Чеки</button><button class="seg-tab" data-seg="mail-disk">Диск</button></div>
+
+  <!-- LETTERS -->
+  <div class="seg-page active" id="seg-mail-letters">
+    <div class="mail-list">
+      <div class="mail-item mail-item--expanded" data-service="Ростелеком" data-amount="1200" data-desc="Интернет + ТВ, договор №12345, ул. Ленина 15, кв. 42">
+        <div class="mail-item__left"><div class="mail-item__dot mail-item__dot--orange"></div><div class="mail-item__info"><div class="mail-item__sender">Ростелеком <span class="mail-item__date">10:15</span></div><div class="mail-item__subject">Квитанция за услуги связи — август 2026</div><div class="mail-item__amount">1 200 ₽</div></div></div>
+        <button class="btn-sm btn-primary mail-pay-btn">Оплатить</button>
+        <div class="mail-item__preview">Уважаемый клиент! Предоставляем вам квитанцию за услуги связи. Интернет 300 Мбит/с + ТВ 175 каналов. Оплатите до 25.08.2026 для безперебойного обслуживания. Номер договора: 12345.</div>
+        <div class="mail-item__attachments"><span class="mail-item__attach">║ Квитанция_08_2026.pdf</span><span class="mail-item__attach">║ Акт_выполненных_работ.pdf</span></div>
+      </div>
+      <div class="mail-item mail-item--expanded" data-service="МТС" data-amount="599" data-desc="Мобильная связь, +7 (999) 123-45-67, тариф «МТС Premium»">
+        <div class="mail-item__left"><div class="mail-item__dot mail-item__dot--red"></div><div class="mail-item__info"><div class="mail-item__sender">МТС <span class="mail-item__date">09:30</span></div><div class="mail-item__subject">Счёт за июль 2026 — мобильная связь</div><div class="mail-item__amount">599 ₽</div></div></div>
+        <button class="btn-sm btn-primary mail-pay-btn">Оплатить</button>
+        <div class="mail-item__preview">Ваш счёт за услуги мобильной связи за период с 01.07 по 31.07.2026. Тариф «МТС Premium»: безлимитные минуты, 60 ГБ интернет, 1000 SMS. К оплате: 599 ₽.</div>
+        <div class="mail-item__attachments"><span class="mail-item__attach">║ Schet_MTS_07_2026.pdf</span></div>
+      </div>
+      <div class="mail-item mail-item--expanded" data-service="ЖКХ Онлайн" data-amount="8500" data-desc="Коммунальные услуги, кв. 42, ул. Ленина д.15, г. Москва">
+        <div class="mail-item__left"><div class="mail-item__dot mail-item__dot--blue"></div><div class="mail-item__info"><div class="mail-item__sender">ЖКХ Онлайн <span class="mail-item__date">вчера</span></div><div class="mail-item__subject">Единый платёжный документ — август 2026</div><div class="mail-item__amount">8 500 ₽</div></div></div>
+        <button class="btn-sm btn-primary mail-pay-btn">Оплатить</button>
+        <div class="mail-item__preview">ЕПД за август 2026: Отопление 3 200 ₽, Горячая вода 1 100 ₽, Холодное вода 480 ₽, Электричество 2 100 ₽, Капремонт 920 ₽, Вывоз ТБО 700 ₽. Итого: 8 500 ₽. Оплата до 20.08.</div>
+        <div class="mail-item__attachments"><span class="mail-item__attach">║ EPD_august_2026.pdf</span><span class="mail-item__attach">║ Pokazaniya_schetchikov.pdf</span></div>
+      </div>
+      <div class="mail-item mail-item--expanded" data-service="ГИБДД" data-amount="3000" data-desc="Штраф за превышение скорости 71 км/ч (ст. 12.9 ч.2), постановление №781234567">
+        <div class="mail-item__left"><div class="mail-item__dot mail-item__dot--red"></div><div class="mail-item__info"><div class="mail-item__sender">ГИБДД <span class="mail-item__date">03.08</span></div><div class="mail-item__subject">Постановление об административном правонарушении</div><div class="mail-item__amount">3 000 ₽</div></div></div>
+        <button class="btn-sm btn-primary mail-pay-btn">Оплатить</button>
+        <div class="mail-item__preview">Фиксация превышения скорости на 21 км/ч. Место: ул. Профсоюзная, д. 64, г. Москва. Скорость 71 км/ч при допустимой 50 км/ч. Статья 12.9 ч.2 КоАП РФ. Скидка 50% при оплате до 03.09.</div>
+        <div class="mail-item__attachments"><span class="mail-item__attach">║ Postanovlenie_781234567.pdf</span></div>
+      </div>
+      <div class="mail-item mail-item--expanded" data-service="Яндекс.Плюс" data-amount="299" data-desc="Подписка Яндекс.Плюс, ежемесячное списание">
+        <div class="mail-item__left"><div class="mail-item__dot mail-item__dot--blue"></div><div class="mail-item__info"><div class="mail-item__sender">Яндекс <span class="mail-item__date">01.08</span></div><div class="mail-item__subject">Подтверждение списания за подписку Яндекс.Плюс</div><div class="mail-item__amount">299 ₽</div></div></div>
+        <button class="btn-sm btn-primary mail-pay-btn">Оплатить</button>
+        <div class="mail-item__preview">Подписка «Яндекс Плюс» продлена. Ежемесячное списание 299 ₽. Включает: Яндекс.Музыка, Кинопоиск без рекламы, бесплатная доставка Яндекс Маркет, скидки на такси.</div>
+      </div>
+      <div class="mail-item mail-item--expanded" data-service="Одноклассники" data-amount="169" data-desc="OK Premium, автопродление">
+        <div class="mail-item__left"><div class="mail-item__dot mail-item__dot--orange"></div><div class="mail-item__info"><div class="mail-item__sender">Одноклассники <span class="mail-item__date">28.07</span></div><div class="mail-item__subject">Списание за OK Premium</div><div class="mail-item__amount">169 ₽</div></div></div>
+        <button class="btn-sm btn-primary mail-pay-btn">Оплатить</button>
+        <div class="mail-item__preview">Автоматическое продление подписки OK Premium. Стоимость: 169 ₽/мес. Спасибо, что вы с нами!</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARIES -->
+  <div class="seg-page" id="seg-mail-summary">
+    <div class="summary-card"><div class="summary-card__header"><div class="summary-card__icon" style="background:var(--blue-light);color:var(--blue)">&#9733;</div><div><div class="summary-card__title">Еженедельный финансовый дайджест</div><div class="summary-card__date">3–9 августа 2026 · Mail Кошелёк ИИ</div></div></div><div class="summary-card__body">За прошедшую неделю вы потратили <strong>42 180 ₽</strong> и получили доход <strong>140 500 ₽</strong>. Основные расходы: продукты (12 400 ₽), транспорт (7 620 ₽), развлечения (10 490 ₽). Кешбэк за неделю: <strong>1 240 ₽</strong>. Бюджет выполнен на 68%.</div><div class="summary-card__highlights"><span class="summary-card__hl summary-card__hl--green">+140 500 ₽ доход</span><span class="summary-card__hl summary-card__hl--red">-42 180 ₽ расход</span><span class="summary-card__hl summary-card__hl--blue">1 240 ₽ кешбэк</span></div></div>
+    <div class="summary-card"><div class="summary-card__header"><div class="summary-card__icon" style="background:var(--green-light);color:var(--green)">&#9989;</div><div><div class="summary-card__title">Непрочитанные счета</div><div class="summary-card__date">Сегодня · Автоматическая проверка</div></div></div><div class="summary-card__body">ИИ нашёл <strong>3 неоплаченных счёта</strong> в вашей почте. Ростелеком (1 200 ₽), МТС (599 ₽), ЖКХ Онлайн (8 500 ₽). Общая сумма: <strong>10 299 ₽</strong>. Рекомендуем оплатить ЖКХ до 20 августа, чтобы избежать пени.</div><div class="summary-card__highlights"><span class="summary-card__hl summary-card__hl--red">3 счёта</span><span class="summary-card__hl summary-card__hl--red">10 299 ₽ итого</span></div></div>
+    <div class="summary-card"><div class="summary-card__header"><div class="summary-card__icon" style="background:#FFF3E0;color:var(--orange)">&#9734;</div><div><div class="summary-card__title">Кешбэк за июль</div><div class="summary-card__date">1 августа 2026 · Ежемесячный отчёт</div></div></div><div class="summary-card__body">За июль вы получили <strong>3 200 ₽ кешбэка</strong> из возможных 5 100 ₽. Самые выгодные категории: АЗС (10%, 1 540 ₽), супермаркеты (5%, 980 ₽). Совет: используйте карту МИР на АЗС Лукойл для максимального кешбэка 10%.</div><div class="summary-card__highlights"><span class="summary-card__hl summary-card__hl--green">3 200 ₽ получено</span><span class="summary-card__hl summary-card__hl--blue">63% от максимума</span></div></div>
+    <div class="summary-card"><div class="summary-card__header"><div class="summary-card__icon" style="background:#F3E8FF;color:var(--purple)">&#8505;</div><div><div class="summary-card__title">Аномалия расходов</div><div class="summary-card__date">Вчера · Защита Mail Кошелёк</div></div></div><div class="summary-card__body">Обнаружена необычная транзакция: <strong>Покупка на 4 290 ₽ в Яндекс Маркет</strong> — это на 60% выше вашего среднего чека в этом магазине. Если вы не совершали эту покупку, немедленно заблокируйте карту в разделе «Мои карты».</div></div>
+  </div>
+
+  <!-- CHECKS/RECEIPTS -->
+  <div class="seg-page" id="seg-mail-checks">
+    <p class="screen-desc">Фискальные документы, автоматически сохранённые из ваших покупок. Хранятся на Облаке Mail.ru.</p>
+    <div class="receipt-card"><div class="receipt-card__header"><span class="receipt-card__merchant">Пятёрочка #1247</span><span class="receipt-card__date">07.08, 12:30</span></div><div class="receipt-card__amount">-3 847 ₽</div><div class="receipt-card__items"><div class="receipt-line"><span class="receipt-line__name">Молоко 3.2% 0.9л</span><span>109 ₽</span></div><div class="receipt-line"><span class="receipt-line__name">Хлеб бородинский</span><span>72 ₽</span></div><div class="receipt-line"><span class="receipt-line__name">Куриная грудка 1кг</span><span>589 ₽</span></div><div class="receipt-line"><span class="receipt-line__name">Овощи смешанные</span><span>342 ₽</span></div><div class="receipt-line"><span class="receipt-line__name">Сыр Российский 400г</span><span>287 ₽</span></div><div class="receipt-line"><span class="receipt-line__name">Макароны Barilla</span><span>189 ₽</span></div><div class="receipt-line receipt-line__total"><span>ИТОГО</span><span>3 847 ₽</span></div></div><div class="receipt-card__footer"><span>Кешбэк 5% = 192 ₽</span><span>ФН: 8712001456</span></div></div>
+    <div class="receipt-card"><div class="receipt-card__header"><span class="receipt-card__merchant">Яндекс Такси</span><span class="receipt-card__date">06.08, 23:15</span></div><div class="receipt-card__amount">-680 ₽</div><div class="receipt-card__items"><div class="receipt-line"><span class="receipt-line__name">Поездка Economy</span><span>580 ₽</span></div><div class="receipt-line"><span class="receipt-line__name">Сервисный сбор</span><span>45 ₽</span></div><div class="receipt-line"><span class="receipt-line__name">Чаевые водителю</span><span>55 ₽</span></div><div class="receipt-line receipt-line__total"><span>ИТОГО</span><span>680 ₽</span></div></div><div class="receipt-card__footer"><span>Кешбэк 3% = 20 ₽</span><span>Маршрут: 6.2 км</span></div></div>
+    <div class="receipt-card"><div class="receipt-card__header"><span class="receipt-card__merchant">Яндекс Маркет</span><span class="receipt-card__date">07.08, 18:45</span></div><div class="receipt-card__amount">-4 290 ₽</div><div class="receipt-card__items"><div class="receipt-line"><span class="receipt-line__name">Наушники Sony WH-1000XM5</span><span>4 190 ₽</span></div><div class="receipt-line"><span class="receipt-line__name">Доставка Яндекс Плюс</span><span>0 ₽</span></div><div class="receipt-line"><span class="receipt-line__name">Скидка по промокоду</span><span>-100 ₽</span></div><div class="receipt-line receipt-line__total"><span>ИТОГО</span><span>4 290 ₽</span></div></div><div class="receipt-card__footer"><span>Кешбэк 5% = 214 ₽</span><span>Сохранено на Диск</span></div></div>
+    <div class="receipt-card"><div class="receipt-card__header"><span class="receipt-card__merchant">VK Музыка (подписка)</span><span class="receipt-card__date">06.08, 00:00</span></div><div class="receipt-card__amount">-199 ₽</div><div class="receipt-card__items"><div class="receipt-line"><span class="receipt-line__name">VK Музыка Premium, 1 мес</span><span>199 ₽</span></div><div class="receipt-line receipt-line__total"><span>ИТОГО</span><span>199 ₽</span></div></div><div class="receipt-card__footer"><span>Автопродление: вкл</span><span>Следующее: 06.09</span></div></div>
+  </div>
+
+  <!-- DISK -->
+  <div class="seg-page" id="seg-mail-disk">
+    <div class="screen-header"><h2>Облако Mail.ru</h2></div>
+    <p class="screen-desc">Все чеки, квитанции и финансовые документы автоматически сохраняются в ваш Диск.</p>
+    <div class="disk-storage"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:14px;font-weight:600">Хранилище</span><span style="font-size:13px;color:var(--text-secondary)">7.2 ГБ из 16 ГБ</span></div><div class="disk-storage__bar"><div class="disk-storage__seg" style="width:25%;background:var(--blue)"></div><div class="disk-storage__seg" style="width:12%;background:var(--green)"></div><div class="disk-storage__seg" style="width:8%;background:var(--orange)"></div></div><div class="disk-storage__legend"><div class="disk-storage__leg"><div class="disk-storage__dot" style="background:var(--blue)"></div>Документы 4.0 ГБ</div><div class="disk-storage__leg"><div class="disk-storage__dot" style="background:var(--green)"></div>Чеки 1.9 ГБ</div><div class="disk-storage__leg"><div class="disk-storage__dot" style="background:var(--orange)"></div>Фото 1.3 ГБ</div></div></div>
+    <div class="disk-file-list">
+      <div class="disk-file"><div class="disk-file__icon" style="background:#FFF0F0;color:var(--red)">║</div><div class="disk-file__info"><div class="disk-file__name">Квитанция_Ростелеком_08_2026.pdf</div><div class="disk-file__meta">245 КБ · Сегодня</div></div></div>
+      <div class="disk-file"><div class="disk-file__icon" style="background:#FFF0F0;color:var(--red)">║</div><div class="disk-file__info"><div class="disk-file__name">Schet_MTS_07_2026.pdf</div><div class="disk-file__meta">189 КБ · 2 дня назад</div></div></div>
+      <div class="disk-file"><div class="disk-file__icon" style="background:#FFF0F0;color:var(--red)">║</div><div class="disk-file__info"><div class="disk-file__name">EPD_август_2026.pdf</div><div class="disk-file__meta">312 КБ · 3 дня назад</div></div></div>
+      <div class="disk-file"><div class="disk-file__icon" style="background:#FFF0F0;color:var(--red)">║</div><div class="disk-file__info"><div class="disk-file__name">Postanovlenie_GIBDD_781234567.pdf</div><div class="disk-file__meta">156 КБ · 5 дней назад</div></div></div>
+      <div class="disk-file"><div class="disk-file__icon" style="background:var(--green-light);color:var(--green)">✓</div><div class="disk-file__info"><div class="disk-file__name">Chek_Pyatyorochka_0708.pdf</div><div class="disk-file__meta">98 КБ · Вчера</div></div></div>
+      <div class="disk-file"><div class="disk-file__icon" style="background:var(--blue-light);color:var(--blue)">☆</div><div class="disk-file__info"><div class="disk-file__name">Дайджест_финансы_03-09авг.pdf</div><div class="disk-file__meta">456 КБ · Сегодня</div></div></div>
+      <div class="disk-file"><div class="disk-file__icon" style="background:#F3E8FF;color:var(--purple)">☆</div><div class="disk-file__info"><div class="disk-file__name">Отчёт_кешбэк_июль_2026.pdf</div><div class="disk-file__meta">234 КБ · 1 авг</div></div></div>
+    </div>
+  </div>
+</div><!-- SUBS (unchanged) -->
+<div class="screen" id="screen-subs">
+  <div class="screen-header"><h2>Подписки</h2></div>
+  <div class="seg-tabs"><button class="seg-tab active" data-seg="sub-active">Активные</button><button class="seg-tab" data-seg="sub-catalog">Каталог</button></div>
+  <div class="seg-page active" id="seg-sub-active">
+    <div class="sub-card"><div class="sub-card__left"><div class="sub-card__icon" style="background:#2688EB">♪</div><div class="sub-card__info"><div class="sub-card__name">VK Музыка</div><div class="sub-card__plan">Премиум · 199 ₽/мес</div><div class="sub-card__next">Следующее: 01.09</div></div></div><div class="sub-card__right"><label class="toggle"><input type="checkbox" class="auto-renew" data-name="VK Музыка" checked><span class="toggle__slider"></span></label><button class="btn-sm btn-outline cancel-sub" data-name="VK Музыка">Отменить</button></div></div>
+    <div class="sub-card"><div class="sub-card__left"><div class="sub-card__icon" style="background:#FF5C5C">▶</div><div class="sub-card__info"><div class="sub-card__name">Кинопоиск</div><div class="sub-card__plan">Плюс · 399 ₽/мес</div><div class="sub-card__next">Следующее: 05.09</div></div></div><div class="sub-card__right"><label class="toggle"><input type="checkbox" class="auto-renew" data-name="Кинопоиск" checked><span class="toggle__slider"></span></label><button class="btn-sm btn-outline cancel-sub" data-name="Кинопоиск">Отменить</button></div></div>
+    <div class="sub-card"><div class="sub-card__left"><div class="sub-card__icon" style="background:#6C5CE7">✉</div><div class="sub-card__info"><div class="sub-card__name">Mail.ru Премиум</div><div class="sub-card__plan">Годовой · 149 ₽/мес</div><div class="sub-card__next">Следующее: 15.09</div></div></div><div class="sub-card__right"><label class="toggle"><input type="checkbox" class="auto-renew" data-name="Mail.ru Премиум" checked><span class="toggle__slider"></span></label><button class="btn-sm btn-outline cancel-sub" data-name="Mail.ru Премиум">Отменить</button></div></div>
+    <div class="sub-card"><div class="sub-card__left"><div class="sub-card__icon" style="background:#FC0">Y</div><div class="sub-card__info"><div class="sub-card__name">Яндекс.Плюс</div><div class="sub-card__plan">С подпиской · 299 ₽/мес</div><div class="sub-card__next">Следующее: 01.09</div></div></div><div class="sub-card__right"><label class="toggle"><input type="checkbox" class="auto-renew" data-name="Яндекс.Плюс" checked><span class="toggle__slider"></span></label><button class="btn-sm btn-outline cancel-sub" data-name="Яндекс.Плюс">Отменить</button></div></div>
+  </div>
+  <div class="seg-page" id="seg-sub-catalog">
+    <p class="screen-desc">Подключите подписку и платите прямо из кошелька. Автопродление и кешбэк.</p>
+    <div class="catalog-list">
+      <div class="catalog-card"><div class="catalog-card__icon" style="background:#2688EB">♪</div><div class="catalog-card__info"><div class="catalog-card__name">VK Музыка</div><div class="catalog-card__price">от 169 ₽/мес</div></div><button class="btn-sm btn-primary catalog-connect">Подключить</button></div>
+      <div class="catalog-card"><div class="catalog-card__icon" style="background:#FF5C5C">▶</div><div class="catalog-card__info"><div class="catalog-card__name">Кинопоиск</div><div class="catalog-card__price">от 299 ₽/мес</div></div><button class="btn-sm btn-primary catalog-connect">Подключить</button></div>
+      <div class="catalog-card"><div class="catalog-card__icon" style="background:#0077FF">📱</div><div class="catalog-card__info"><div class="catalog-card__name">VK Клипы</div><div class="catalog-card__price">от 99 ₽/мес</div></div><button class="btn-sm btn-primary catalog-connect">Подключить</button></div>
+      <div class="catalog-card"><div class="catalog-card__icon" style="background:#00C853">☁</div><div class="catalog-card__info"><div class="catalog-card__name">Облако Mail.ru</div><div class="catalog-card__price">от 99 ₽/мес</div></div><button class="btn-sm btn-primary catalog-connect">Подключить</button></div>
+      <div class="catalog-card"><div class="catalog-card__icon" style="background:#6C5CE7">✉</div><div class="catalog-card__info"><div class="catalog-card__name">Mail.ru Премиум</div><div class="catalog-card__price">149 ₽/мес</div></div><button class="btn-sm btn-primary catalog-connect">Подключить</button></div>
+      <div class="catalog-card"><div class="catalog-card__icon" style="background:#FC0">Y</div><div class="catalog-card__info"><div class="catalog-card__name">Яндекс.Плюс</div><div class="catalog-card__price">от 199 ₽/мес</div></div><button class="btn-sm btn-primary catalog-connect">Подключить</button></div>
+      <div class="catalog-card"><div class="catalog-card__icon" style="background:#FF6D00">OK</div><div class="catalog-card__info"><div class="catalog-card__name">OK Premium</div><div class="catalog-card__price">от 169 ₽/мес</div></div><button class="btn-sm btn-primary catalog-connect">Подключить</button></div>
+    </div>
+  </div>
+</div><!-- ANALYTICS (expanded with donut) -->
+<div class="screen" id="screen-analytics">
+  <div class="screen-header"><h2>Аналитика</h2></div>
+  <div class="period-tabs"><button class="period-tab active" data-period="week">Неделя</button><button class="period-tab" data-period="month">Месяц</button><button class="period-tab" data-period="year">Год</button></div>
+  <div class="analytics-summary">
+    <div class="analytics-stat"><div class="analytics-stat__label">Расходы</div><div class="analytics-stat__value">42 180 ₽</div></div>
+    <div class="analytics-stat"><div class="analytics-stat__label">Доходы</div><div class="analytics-stat__value analytics-stat__value--green">140 500 ₽</div></div>
+    <div class="analytics-stat"><div class="analytics-stat__label">Кешбэк</div><div class="analytics-stat__value analytics-stat__value--blue">1 240 ₽</div></div>
+  </div>
+
+  <!-- Donut Chart -->
+  <div class="donut-container">
+    <div class="donut-wrap">
+      <svg viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="72" stroke="#E7E8EC" stroke-width="28"/>
+        <circle cx="100" cy="100" r="72" stroke="#0077FF" stroke-width="28" stroke-dasharray="293.5 452.4" stroke-dashoffset="0" stroke-linecap="round" data-donut/>
+        <circle cx="100" cy="100" r="72" stroke="#FF3B30" stroke-width="28" stroke-dasharray="90.5 452.4" stroke-dashoffset="-293.5" data-donut/>
+        <circle cx="100" cy="100" r="72" stroke="#6C5CE7" stroke-width="28" stroke-dasharray="99 452.4" stroke-dashoffset="-384" data-donut/>
+        <circle cx="100" cy="100" r="72" stroke="#FF9500" stroke-width="28" stroke-dasharray="63 452.4" stroke-dashoffset="-483" data-donut/>
+        <circle cx="100" cy="100" r="72" stroke="#00C853" stroke-width="28" stroke-dasharray="53.4 452.4" stroke-dashoffset="-546" data-donut/>
+      </svg>
+      <div class="donut-center"><div class="donut-center__amount">42 180 ₽</div><div class="donut-center__label">за неделю</div></div>
+    </div>
+    <div class="donut-legend">
+      <div class="donut-legend__item"><div class="donut-legend__dot" style="background:#0077FF"></div>Продукты<span class="donut-legend__pct">29%</span></div>
+      <div class="donut-legend__item"><div class="donut-legend__dot" style="background:#FF3B30"></div>Транспорт<span class="donut-legend__pct">18%</span></div>
+      <div class="donut-legend__item"><div class="donut-legend__dot" style="background:#6C5CE7"></div>Развлечения<span class="donut-legend__pct">25%</span></div>
+      <div class="donut-legend__item"><div class="donut-legend__dot" style="background:#FF9500"></div>Подписки<span class="donut-legend__pct">15%</span></div>
+      <div class="donut-legend__item"><div class="donut-legend__dot" style="background:#00C853"></div>Прочее<span class="donut-legend__pct">13%</span></div>
+    </div>
+  </div>
+
+  <!-- Budget -->
+  <div class="budget-block"><div class="budget-block__header"><span class="budget-block__title">Бюджет на август</span><span class="budget-block__amount">42 180 ₽ из 60 000 ₽</span></div><div class="budget-bar"><div class="budget-bar__fill budget-bar__fill--warn" style="width:70%"></div></div><div class="budget-block__days">Осталось 14 820 ₽ на 23 дня · ~644 ₽/день</div></div>
+
+  <!-- Bar Chart -->
+  <div class="chart-container"><div class="chart-bars">
+    <div class="chart-bar-wrapper"><div class="chart-bar-label">Пн</div><div class="chart-bar-track"><div class="chart-bar" data-h="45%"></div></div></div>
+    <div class="chart-bar-wrapper"><div class="chart-bar-label">Вт</div><div class="chart-bar-track"><div class="chart-bar" data-h="72%"></div></div></div>
+    <div class="chart-bar-wrapper"><div class="chart-bar-label">Ср</div><div class="chart-bar-track"><div class="chart-bar" data-h="30%"></div></div></div>
+    <div class="chart-bar-wrapper"><div class="chart-bar-label">Чт</div><div class="chart-bar-track"><div class="chart-bar" data-h="88%"></div></div></div>
+    <div class="chart-bar-wrapper"><div class="chart-bar-label">Пт</div><div class="chart-bar-track"><div class="chart-bar" data-h="55%"></div></div></div>
+    <div class="chart-bar-wrapper"><div class="chart-bar-label">Сб</div><div class="chart-bar-track"><div class="chart-bar" data-h="20%"></div></div></div>
+    <div class="chart-bar-wrapper"><div class="chart-bar-label">Вс</div><div class="chart-bar-track"><div class="chart-bar" data-h="40%"></div></div></div>
+  </div></div>
+
+  <!-- Top Merchants -->
+  <div class="section-block"><div class="section-block__header"><h2>Топ места покупок</h2></div>
+  <div class="merchant-list">
+    <div class="merchant-item"><div class="merchant-item__rank">1</div><div class="merchant-item__icon" style="background:#FFF3E0;color:#FF6D00">ЯМ</div><div><div class="merchant-item__name">Яндекс Маркет</div><div class="merchant-item__count">4 покупки</div></div><div class="merchant-item__amount">8 540 ₽</div></div>
+    <div class="merchant-item"><div class="merchant-item__rank">2</div><div class="merchant-item__icon" style="background:#E8FFF0;color:#00A844">ПЯ</div><div><div class="merchant-item__name">Пятёрочка</div><div class="merchant-item__count">6 покупок</div></div><div class="merchant-item__amount">7 820 ₽</div></div>
+    <div class="merchant-item"><div class="merchant-item__rank">3</div><div class="merchant-item__icon" style="background:#FFF0F0;color:#FF3B30">ЯТ</div><div><div class="merchant-item__name">Яндекс Такси</div><div class="merchant-item__count">8 поездок</div></div><div class="merchant-item__amount">5 440 ₽</div></div>
+    <div class="merchant-item"><div class="merchant-item__rank">4</div><div class="merchant-item__icon" style="background:var(--blue-light);color:var(--blue)">ВК</div><div><div class="merchant-item__name">VK Музыка</div><div class="merchant-item__count">подписка</div></div><div class="merchant-item__amount">199 ₽</div></div>
+  </div></div>
+
+  <!-- Categories -->
+  <div class="section-block"><div class="section-block__header"><h2>Категории расходов</h2></div>
+  <div class="category-list">
+    <div class="category-item"><div class="category-item__left"><div class="category-dot" style="background:#0077FF"></div><span>Продукты</span></div><div class="category-item__bar"><div class="category-item__fill" style="width:65%;background:#0077FF"></div></div><div class="category-item__amount">12 400 ₽</div></div>
+    <div class="category-item"><div class="category-item__left"><div class="category-dot" style="background:#6C5CE7"></div><span>Развлечения</span></div><div class="category-item__bar"><div class="category-item__fill" style="width:55%;background:#6C5CE7"></div></div><div class="category-item__amount">10 490 ₽</div></div>
+    <div class="category-item"><div class="category-item__left"><div class="category-dot" style="background:#FF3B30"></div><span>Транспорт</span></div><div class="category-item__bar"><div class="category-item__fill" style="width:40%;background:#FF3B30"></div></div><div class="category-item__amount">7 620 ₽</div></div>
+    <div class="category-item"><div class="category-item__left"><div class="category-dot" style="background:#FF9500"></div><span>Подписки</span></div><div class="category-item__bar"><div class="category-item__fill" style="width:35%;background:#FF9500"></div></div><div class="category-item__amount">6 275 ₽</div></div>
+    <div class="category-item"><div class="category-item__left"><div class="category-dot" style="background:#00C853"></div><span>Прочее</span></div><div class="category-item__bar"><div class="category-item__fill" style="width:35%;background:#00C853"></div></div><div class="category-item__amount">5 395 ₽</div></div>
+  </div></div>
+
+  <!-- Insights -->
+  <div class="section-block"><div class="section-block__header"><h2>Инсайты ИИ</h2></div>
+    <div class="insight-card"><div class="insight-card__title">Тренд расходов</div><div class="insight-card__text">Ваши расходы на транспорт выросли на <strong>23%</strong> по сравнению с прошлой неделей. Рекомендуем использовать Яндекс.Такси в часы низкого спроса для экономии до 30%.</div></div>
+    <div class="insight-card"><div class="insight-card__title">Экономия бюджета</div><div class="insight-card__text">При текущем темпе вы сэкономите <strong>14 820 ₽</strong> к концу августа. Попробуйте перенести подписку Кинопоиск на тариф «Годовой» — выгода <strong>959 ₽/год</strong>.</div></div>
+  </div>
+</div>
+
+<!-- CARDS, CASHBACK, SPLIT, SETTINGS — same as before -->
+<div class="screen" id="screen-cards">
+  <div class="screen-header"><h2>Мои карты</h2></div>
+  <div class="card-mir card-mir--wide"><div class="card-mir__top"><div class="card-mir__logo">Mail Кошелёк</div><div class="card-mir__brand">МИР</div></div><div class="card-mir__number">5469 38•• •••• 4829</div><div class="card-mir__bottom"><div class="card-mir__holder">КИРИЛЛ СОРОЧУК</div><div class="card-mir__expiry">12/28</div></div><div class="card-mir__chip"></div></div>
+  <div class="card-detail"><div class="card-detail__row"><span>Тип</span><span>Дебетовая МИР</span></div><div class="card-detail__row"><span>Статус</span><span class="status-active">Активна</span></div><div class="card-detail__row"><span>Лимит в месяц</span><span>500 000 ₽</span></div><div class="card-detail__row"><span>Кешбэк</span><span>до 10%</span></div><div class="card-detail__row"><span>Владелец</span><span>Кирилл Сорочук</span></div></div>
+  <div class="card-actions-grid">
+    <button class="card-action-btn" id="freezeCardBtn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Заморозить</button>
+    <button class="card-action-btn" id="cardDetailsBtn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Реквизиты</button>
+    <button class="card-action-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Лимиты</button>
+    <button class="card-action-btn card-action-btn--danger"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>Закрыть</button>
+  </div>
+  <div class="virtual-cards-title">Виртуальные карты</div>
+  <div class="vcard"><div class="vcard__left"><div class="vcard__dots">•••• •••• •••• 7741</div><div class="vcard__meta">Для онлайн-покупок · 15.07.2026</div></div><label class="toggle"><input type="checkbox" checked><span class="toggle__slider"></span></label></div>
+  <div class="vcard"><div class="vcard__left"><div class="vcard__dots">•••• •••• •••• 3388</div><div class="vcard__meta">Для подписок · 01.08.2026</div></div><label class="toggle"><input type="checkbox" checked><span class="toggle__slider"></span></label></div>
+  <div class="vcard"><div class="vcard__left"><div class="vcard__dots">•••• •••• •••• 9012</div><div class="vcard__meta">ИП расходы · 10.07.2026</div></div><label class="toggle"><input type="checkbox" checked><span class="toggle__slider"></span></label></div>
+</div>
+
+<div class="screen" id="screen-cashback">
+  <div class="screen-header"><h2>Кешбэк</h2></div>
+  <div class="cashback-hero"><div class="cashback-hero__label">Доступно к выводу</div><div class="cashback-hero__amount">4 820 ₽</div><div class="cashback-hero__sub">Начислено за август: +1 240 ₽ · Выведено за июль: 3 200 ₽</div><button class="btn-primary" style="margin-top:12px" id="withdrawCashback">Вывести на карту</button></div>
+  <div class="section-block"><div class="section-block__header"><h2>История кешбэка</h2></div>
+  <div class="tx-list">
+    <div class="tx-item"><div class="tx-item__icon tx-income" style="font-size:11px">АЗС</div><div class="tx-item__info"><div class="tx-item__name">Лукойл АЗС</div><div class="tx-item__meta">Вчера · 10% кешбэк</div></div><div class="tx-item__amount tx-plus">+540 ₽</div></div>
+    <div class="tx-item"><div class="tx-item__icon tx-income" style="font-size:11px">ПЯ</div><div class="tx-item__info"><div class="tx-item__name">Пятёрочка</div><div class="tx-item__meta">Вчера · 5% кешбэк</div></div><div class="tx-item__amount tx-plus">+192 ₽</div></div>
+    <div class="tx-item"><div class="tx-item__icon tx-income" style="font-size:11px">ЯМ</div><div class="tx-item__info"><div class="tx-item__name">Яндекс Маркет</div><div class="tx-item__meta">07.08 · 5% кешбэк</div></div><div class="tx-item__amount tx-plus">+214 ₽</div></div>
+    <div class="tx-item"><div class="tx-item__icon tx-income" style="font-size:11px">ЯТ</div><div class="tx-item__info"><div class="tx-item__name">Яндекс Такси</div><div class="tx-item__meta">06.08 · 3% кешбэк</div></div><div class="tx-item__amount tx-plus">+20 ₽</div></div>
+  </div></div>
+  <div class="section-block"><div class="section-block__header"><h2>Категории кешбэка</h2></div><div class="cashback-cats"><div class="cashback-cat"><div class="cashback-cat__icon" style="background:#FFF3E0;color:#FF9500">⛽</div><div class="cashback-cat__info"><div class="cashback-cat__name">АЗС</div><div class="cashback-cat__rate">10%</div></div></div><div class="cashback-cat"><div class="cashback-cat__icon" style="background:#E8F2FF;color:#0077FF">🛒</div><div class="cashback-cat__info"><div class="cashback-cat__name">Супермаркеты</div><div class="cashback-cat__rate">5%</div></div></div><div class="cashback-cat"><div class="cashback-cat__icon" style="background:#E8FFF0;color:#00A844">🍽</div><div class="cashback-cat__info"><div class="cashback-cat__name">Рестораны</div><div class="cashback-cat__rate">8%</div></div></div><div class="cashback-cat"><div class="cashback-cat__icon" style="background:#F3E8FF;color:#6C5CE7">🎬</div><div class="cashback-cat__info"><div class="cashback-cat__name">Развлечения</div><div class="cashback-cat__rate">7%</div></div></div><div class="cashback-cat"><div class="cashback-cat__icon" style="background:#FFE8E8;color:#FF5C5C">🚕</div><div class="cashback-cat__info"><div class="cashback-cat__name">Такси</div><div class="cashback-cat__rate">3%</div></div></div></div></div>
+</div>
+
+<div class="screen" id="screen-split">
+  <div class="screen-header"><h2>Сплит счёта</h2></div>
+  <p class="screen-desc">Разделите счёт между друзьями.</p>
+  <div class="form-group"><label class="form-label">Общая сумма</label><div class="amount-input"><input type="number" class="form-input form-input--amount" id="splitTotal" value="3000" min="1"><span class="amount-input__suffix">₽</span></div></div>
+  <div class="form-group"><label class="form-label">Количество человек</label><div class="stepper"><button class="stepper__btn" id="splitMinus">−</button><span class="stepper__value" id="splitCount">2</span><button class="stepper__btn" id="splitPlus">+</button></div></div>
+  <div class="split-result"><span>С каждого:</span><span class="split-result__amount" id="splitPerPerson">1 500 ₽</span></div>
+  <button class="btn-primary btn-full" id="splitSend">Отправить запросы</button>
+</div>
+
+<div class="screen" id="screen-settings">
+  <div class="screen-header"><h2>Настройки</h2></div>
+  <div class="settings-list">
+  <div class="setting-item"><div class="setting-item__left"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><div><div class="setting-item__label">Кирилл Сорочук</div><div class="setting-item__desc">k.sorochuk@mail.ru · +7 (999) 123-45-67</div></div></div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8E99A8" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <div class="setting-item"><div class="setting-item__left"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><div class="setting-item__label">Безопасность</div></div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8E99A8" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <div class="setting-item"><div class="setting-item__left"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg><div class="setting-item__label">Уведомления</div></div><label class="toggle"><input type="checkbox" checked><span class="toggle__slider"></span></label></div>
+  <div class="setting-item"><div class="setting-item__left"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><div class="setting-item__label">ИИ-саммари из почты</div></div><label class="toggle"><input type="checkbox" checked><span class="toggle__slider"></span></label></div>
+  <div class="setting-item"><div class="setting-item__left"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><div class="setting-item__label">Язык</div></div><span style="color:#8E99A8;font-size:14px">Русский</span></div>
+  <div class="setting-item"><div class="setting-item__left"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><div class="setting-item__label">Лимит переводов</div><div class="setting-item__desc"><span id="transferLimitVal">50 000</span> ₽/день</div></div></div>
+  <input type="range" class="range-slider" id="transferLimit" min="5000" max="500000" step="5000" value="50000">
+  <div class="setting-item"><div class="setting-item__left"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><div class="setting-item__label">Лимит оплат</div><div class="setting-item__desc"><span id="paymentLimitVal">100 000</span> ₽/день</div></div></div>
+  <input type="range" class="range-slider" id="paymentLimit" min="10000" max="1000000" step="10000" value="100000">
+  <div class="setting-item setting-item--danger" style="margin-top:16px"><div class="setting-item__left"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div class="setting-item__label">Удалить аккаунт</div></div></div>
+  <div style="text-align:center;padding:20px;color:#8E99A8;font-size:12px">Mail Кошелёк v4.0 · Демо для хакатона</div>
+</div>
+
+  </div><!-- /content -->
+
+  <nav class="tabbar">
+    <button class="tab active" data-tab="home"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Главная</span></button>
+    <button class="tab" data-tab="transfers"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg><span>Переводы</span></button>
+    <button class="tab" data-tab="mail"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg><span>Почта</span></button>
+    <button class="tab" data-tab="subs"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Подписки</span></button>
+    <button class="tab" data-tab="analytics"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span>Аналитика</span></button>
+  </nav>
+
+  <div class="bottom-sheet" id="paymentSheet"><div class="bottom-sheet__overlay" id="sheetOverlay"></div><div class="bottom-sheet__content"><div class="bottom-sheet__handle"></div><div class="bottom-sheet__title" id="payService">—</div><div class="bottom-sheet__amount" id="payAmount">0 ₽</div><div class="bottom-sheet__desc" id="payDesc">—</div><div class="bottom-sheet__total">Итого: <span id="payTotal">0 ₽</span></div><button class="btn-primary btn-full" id="payConfirm" style="margin-top:16px">Подтвердить оплату</button><button class="btn-text" id="payCancel">Отмена</button></div></div>
+
+  <div class="success-overlay" id="successOverlay"><div class="success-overlay__circle"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+
+  <div class="toast-container" id="toastContainer"></div>
+</div><!-- /app -->
+<script src="cabinet.js"></script>
+</body>
+</html>

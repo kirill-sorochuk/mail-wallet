@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mail Кошелёк — Умные финансы в экосистеме Mail.ru</title>
+  <meta name="description" content="Mail Кошелёк — мобильный кошелёк и финансовый сервис от Mail.ru. Переводы, платежи, кешбэк и карты в одном приложении.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#" class="header__logo">
+        <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="10" fill="#0077FF"/>
+          <path d="M10 24V12.5C10 11.67 10.67 11 11.5 11H18L22 15H24.5C25.33 15 26 15.67 26 16.5V24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 24H26" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="18" cy="19" r="2.5" fill="white" opacity="0.9"/>
+        </svg>
+        Mail <span>Кошелёк</span>
+      </a>
+      <nav class="header__nav">
+        <a href="#features">Возможности</a>
+        <a href="#how-it-works">Как работает</a>
+        <a href="#cards">Карты</a>
+        <a href="#security">Безопасность</a>
+        <a href="#integrations">Экосистема</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="header__actions">
+        <a href="cabinet.html" class="btn btn--ghost">Войти</a>
+        <a href="cabinet.html" class="btn btn--primary">Начать</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="mobile-menu__panel">
+      <button class="mobile-menu__close">✕</button>
+      <div class="mobile-menu__nav">
+        <a href="#features">Возможности</a>
+        <a href="#how-it-works">Как работает</a>
+        <a href="#cards">Карты</a>
+        <a href="#security">Безопасность</a>
+        <a href="#integrations">Экосистема</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="cabinet.html" class="btn btn--primary" style="width:100%;text-decoration:none;display:block;text-align:center">Войти через Mail.ru</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm3.78 5.28l-4.5 6a.75.75 0 01-1.06.14l-2.5-2a.75.75 0 011-1.12l1.94 1.56 3.96-5.28a.75.75 0 011.16.96z"/></svg>
+            Новинка 2025 — Хакатон Mail.ru
+          </div>
+          <h1 class="hero__title">Ваши финансы —<br><span>в одном месте</span></h1>
+          <p class="hero__desc">Умный кошелёк в экосистеме Mail.ru. Мгновенные переводы, кешбэк до 15%, виртуальные и физические карты, аналитика расходов и интеграция с любимыми сервисами.</p>
+          <div class="hero__actions">
+            <a href="cabinet.html" class="btn btn--primary btn--large">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14.4A6.4 6.4 0 1116.4 10 6.41 6.41 0 0110 16.4z" fill="currentColor" opacity=".4"/><path d="M10 5v5l3.54 3.54" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              Открыть кошелёк
+            </a>
+            <a href="#how-it-works" class="btn btn--outline btn--large">
+              Узнать больше
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+          <div class="hero__trust">
+            <div class="hero__trust-avatars">
+              <div class="avatar">КС</div>
+              <div class="avatar">МВ</div>
+              <div class="avatar">ДС</div>
+              <div class="avatar">+</div>
+            </div>
+            <div class="hero__trust-text"><strong>2 млн+</strong> пользователей уже с нами</div>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="phone-mockup">
+            <div class="phone-mockup__screen">
+              <div class="phone-mockup__notch"></div>
+              <div class="phone-mockup__content">
+                <div class="phone-mockup__greeting">Добрый день, Кирилл 👋</div>
+                <div class="phone-mockup__balance-label">Ваш баланс</div>
+                <div class="phone-mockup__balance"><small>₽</small> 248 350</div>
+                <div class="phone-mockup__actions">
+                  <div class="phone-mockup__action">
+                    <div class="phone-mockup__action-icon blue">↑</div><span>Пополнить</span>
+                  </div>
+                  <div class="phone-mockup__action">
+                    <div class="phone-mockup__action-icon green">←</div><span>Перевести</span>
+                  </div>
+                  <div class="phone-mockup__action">
+                    <div class="phone-mockup__action-icon orange">■</div><span>Оплатить</span>
+                  </div>
+                  <div class="phone-mockup__action">
+                    <div class="phone-mockup__action-icon red">◎</div><span>Карта</span>
+                  </div>
+                </div>
+                <div class="phone-mockup__card">
+                  <div class="phone-mockup__card-name">Mail Кошелёк</div>
+                  <div class="phone-mockup__card-number">•••• •••• •••• 4829</div>
+                  <div class="phone-mockup__card-bottom">
+                    <div class="phone-mockup__card-expiry">12/28</div>
+                    <div class="phone-mockup__card-brand">МИР</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero__float-card hero__float-card--1">
+            <div class="float-card__icon" style="background:#E8FFF0;color:#00A844;font-size:20px">✓</div>
+            <div class="float-card__title">Перевод успешен</div>
+            <div class="float-card__value">+5 000 ₽ → Мария</div>
+          </div>
+          <div class="hero__float-card hero__float-card--2">
+            <div class="float-card__icon" style="background:#FFF3E0;color:#FF9500;font-size:20px">%</div>
+            <div class="float-card__title">Кешбэк</div>
+            <div class="float-card__value">+750 ₽ вернётся</div>
+          </div>
+          <div class="hero__float-card hero__float-card--3">
+            <div class="float-card__icon" style="background:#E8F2FF;color:#0077FF;font-size:20px">🛡</div>
+            <div class="float-card__title">Защита</div>
+            <div class="float-card__value">3DS активна</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="trust-bar">
+      <div class="container">
+        <div class="trust-bar__title">Нам доверяют партнёры</div>
+        <div class="trust-bar__logos">
+          <div class="trust-bar__logo">Mail.ru</div>
+          <div class="trust-bar__logo">ВКонтакте</div>
+          <div class="trust-bar__logo">Одноклассники</div>
+          <div class="trust-bar__logo">VK Pay</div>
+          <div class="trust-bar__logo">Тинькофф</div>
+          <div class="trust-bar__logo">СБП</div>
+          <div class="trust-bar__logo">МИР</div>
+          <div class="trust-bar__logo">Mastercard</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section section--gray" id="features">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Возможности</span>
+          <h2 class="section__title">Всё, что нужно для удобных финансов</h2>
+          <p class="section__desc">Mail Кошелёк объединяет лучшие финансовые инструменты в одном приложении — от мгновенных переводов до умной аналитики расходов.</p>
+        </div>
+        <div class="features__grid">
+          <div class="feature-card reveal reveal-delay-1">
+            <div class="feature-card__icon blue">⇄</div>
+            <h3 class="feature-card__title">Мгновенные переводы</h3>
+            <p class="feature-card__desc">Переводите деньги друзьям и семье за секунды. Бесплатно между кошельками Mail.ru и через СБП.</p>
+          </div>
+          <div class="feature-card reveal reveal-delay-2">
+            <div class="feature-card__icon green">★</div>
+            <h3 class="feature-card__title">Кешбэк до 15%</h3>
+            <p class="feature-card__desc">Получайте возврат до 15% за покупки у партнёров. Специальные предложения от 500+ магазинов.</p>
+          </div>
+          <div class="feature-card reveal reveal-delay-3">
+            <div class="feature-card__icon orange">💳</div>
+            <h3 class="feature-card__title">Виртуальные карты</h3>
+            <p class="feature-card__desc">Создавайте виртуальные карты для онлайн-покупок мгновенно. Apple Pay и Google Pay из коробки.</p>
+          </div>
+          <div class="feature-card reveal reveal-delay-1">
+            <div class="feature-card__icon purple">📊</div>
+            <h3 class="feature-card__title">Умная аналитика</h3>
+            <p class="feature-card__desc">Автоматическая категоризация расходов, графики, бюджет на месяц и рекомендации по экономии.</p>
+          </div>
+          <div class="feature-card reveal reveal-delay-2">
+            <div class="feature-card__icon red">👥</div>
+            <h3 class="feature-card__title">Сплит-платежи</h3>
+            <p class="feature-card__desc">Делите счета с друзьями в ресторанах, разделяйте аренду и общие покупки. Всё автоматически.</p>
+          </div>
+          <div class="feature-card reveal reveal-delay-3">
+            <div class="feature-card__icon teal">📈</div>
+            <h3 class="feature-card__title">Инвестиции</h3>
+            <p class="feature-card__desc">Начните инвестировать с 100 ₽. Акции, облигации и фонды прямо в приложении с рекомендациями ИИ.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Как это работает</span>
+          <h2 class="section__title">Начните за 4 простых шага</h2>
+          <p class="section__desc">Регистрация и первый платёж занимают меньше 2 минут. Никаких визитов в офис — всё онлайн.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal reveal-delay-1">
+            <div class="step__number">1</div>
+            <h3 class="step__title">Войдите через Mail.ru</h3>
+            <p class="step__desc">Используйте свой аккаунт Mail.ru для быстрой регистрации без лишних форм.</p>
+          </div>
+          <div class="step reveal reveal-delay-2">
+            <div class="step__number">2</div>
+            <h3 class="step__title">Укажите данные</h3>
+            <p class="step__desc">Введите ФИО и номер телефона — этого достаточно для открытия кошелька.</p>
+          </div>
+          <div class="step reveal reveal-delay-3">
+            <div class="step__number">3</div>
+            <h3 class="step__title">Пополните баланс</h3>
+            <p class="step__desc">Банковская карта, СБП или перевод от друга. Первое пополнение без комиссии.</p>
+          </div>
+          <div class="step reveal reveal-delay-4">
+            <div class="step__number">4</div>
+            <h3 class="step__title">Готово!</h3>
+            <p class="step__desc">Платите, переводите, получайте кешбэк и управляйте финансами.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARDS / TARIFFS -->
+    <section class="section section--gray" id="cards">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Тарифы</span>
+          <h2 class="section__title">Выберите свой план</h2>
+          <p class="section__desc">Три тарифа для любых нужд — от базового кошелька до премиального обслуживания.</p>
+        </div>
+        <div class="cards__tabs reveal">
+          <button class="cards__tab active">Ежемесячно</button>
+          <button class="cards__tab">Ежегодно</button>
+          <button class="cards__tab">Навсегда</button>
+        </div>
+        <div class="cards__grid">
+          <!-- Basic -->
+          <div class="product-card reveal reveal-delay-1">
+            <div class="product-card__icon" style="background:#E8F2FF">⭐</div>
+            <div class="product-card__name">Базовый</div>
+            <div class="product-card__subtitle">Для повседневных платежей</div>
+            <div class="product-card__price">Бесплатно</div>
+            <div class="product-card__period">Навсегда</div>
+            <div class="product-card__divider"></div>
+            <div class="product-card__features">
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Мгновенные переводы
+              </div>
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                1 виртуальная карта
+              </div>
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Кешбэк до 3%
+              </div>
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Базовая аналитика
+              </div>
+              <div class="product-card__feature disabled">
+                <svg class="cross" viewBox="0 0 18 18" fill="none"><path d="M5 5l8 8M13 5l-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                Инвестиции
+              </div>
+              <div class="product-card__feature disabled">
+                <svg class="cross" viewBox="0 0 18 18" fill="none"><path d="M5 5l8 8M13 5l-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                Премиум-поддержка
+              </div>
+            </div>
+            <button class="btn btn--outline" data-cta>Начать бесплатно</button>
+          </div>
+
+          <!-- Plus -->
+          <div class="product-card featured reveal reveal-delay-2">
+            <div class="product-card__icon" style="background:#E8FFF0">💎</div>
+            <div class="product-card__name">Плюс</div>
+            <div class="product-card__subtitle">Для активных пользователей</div>
+            <div class="product-card__price">199 ₽<small>/мес</small></div>
+            <div class="product-card__period">или 1 990 ₽/год (скидка 17%)</div>
+            <div class="product-card__divider"></div>
+            <div class="product-card__features">
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Всё из Базового
+              </div>
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                5 виртуальных карт
+              </div>
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Кешбэк до 10%
+              </div>
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Физическая карта Visa
+              </div>
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Расширенная аналитика + ИИ
+              </div>
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Приоритетная поддержка
+              </div>
+            </div>
+            <a href="cabinet.html" class="btn btn--primary">Попробовать 7 дней бесплатно</a>
+          </div>
+
+          <!-- Premium -->
+          <div class="product-card reveal reveal-delay-3">
+            <div class="product-card__icon" style="background:#FFF3E0">👑</div>
+            <div class="product-card__name">Премиум</div>
+            <div class="product-card__subtitle">Максимум возможностей</div>
+            <div class="product-card__price">499 ₽<small>/мес</small></div>
+            <div class="product-card__period">или 4 990 ₽/год (скидка 17%)</div>
+            <div class="product-card__divider"></div>
+            <div class="product-card__features">
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Всё из Плюс
+              </div>
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Безлимитные карты
+              </div>
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Кешбэк до 15%
+              </div>
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Инвестиционный счёт
+              </div>
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Персональный менеджер
+              </div>
+              <div class="product-card__feature">
+                <svg class="check" viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Страхование покупок
+              </div>
+            </div>
+            <button class="btn btn--outline" data-cta>Выбрать Премиум</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURITY -->
+    <section class="section section--dark" id="security">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Безопасность</span>
+          <h2 class="section__title">Ваши деньги под надёжной защитой</h2>
+          <p class="section__desc">Мы используем те же стандарты безопасности, что и крупнейшие банки России.</p>
+        </div>
+        <div class="security__grid">
+          <div class="security__visual reveal">
+            <div class="security__shield">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M60 10L20 30V60C20 85 60 110 60 110S100 85 100 60V30L60 10Z" stroke="white" stroke-width="3" fill="none"/>
+                <path d="M45 60L55 70L75 50" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="security__features">
+            <div class="security__feature reveal reveal-delay-1">
+              <div class="security__feature-icon">🔐</div>
+              <div>
+                <div class="security__feature-title">256-битное шифрование</div>
+                <div class="security__feature-desc">Все данные передаются по защищённому TLS-соединению. Ваша финансовая информация недоступна третьим лицам.</div>
+              </div>
+            </div>
+            <div class="security__feature reveal reveal-delay-2">
+              <div class="security__feature-icon">📱</div>
+              <div>
+                <div class="security__feature-title">Двухфакторная аутентификация</div>
+                <div class="security__feature-desc">Подтверждение операций через SMS, push-уведомление или биометрию (Face ID / Touch ID).</div>
+              </div>
+            </div>
+            <div class="security__feature reveal reveal-delay-3">
+              <div class="security__feature-icon">🛡</div>
+              <div>
+                <div class="security__feature-title">3D Secure 2.0</div>
+                <div class="security__feature-desc">Каждая онлайн-оплата проходит проверку 3DS для защиты от несанкционированных транзакций.</div>
+              </div>
+            </div>
+            <div class="security__feature reveal reveal-delay-4">
+              <div class="security__feature-icon">🔒</div>
+              <div>
+                <div class="security__feature-title">Блокировка в один тап</div>
+                <div class="security__feature-desc">Мгновенная блокировка карты и кошелька из приложения при потере устройства.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="section" id="stats">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Цифры</span>
+          <h2 class="section__title">Нам доверяют миллионы</h2>
+          <p class="section__desc">Mail Кошелёк стремительно растёт — вот наши результаты за первый год работы.</p>
+        </div>
+        <div class="stats__grid">
+          <div class="stat-card reveal reveal-delay-1">
+            <div class="stat-card__number" data-count="2000000" data-suffix="+">0</div>
+            <div class="stat-card__label">Пользователей</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-2">
+            <div class="stat-card__number" data-count="50" data-suffix=" млрд ₽">0</div>
+            <div class="stat-card__label">Оборот за год</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-3">
+            <div class="stat-card__number" data-count="500" data-suffix="+">0</div>
+            <div class="stat-card__label">Партнёров кешбэка</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-4">
+            <div class="stat-card__number" data-count="4" data-suffix=".9 ★">0</div>
+            <div class="stat-card__label">Средняя оценка</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTEGRATIONS -->
+    <section class="section section--gray" id="integrations">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Экосистема</span>
+          <h2 class="section__title">Интеграция с сервисами Mail.ru</h2>
+          <p class="section__desc">Mail Кошелёк работает как единый финансовый хаб для всей экосистемы.</p>
+        </div>
+        <div class="integrations__grid">
+          <div class="integration-card reveal reveal-delay-1">
+            <div class="integration-card__icon" style="background:#E8F2FF;color:#0077FF">📧</div>
+            <div>
+              <div class="integration-card__title">Mail.ru Почта</div>
+              <div class="integration-card__desc">ИИ распознаёт счета и квитанции в письмах. Кнопка «Оплатить» прямо в письме — без перехода в банк. Автоматическое оповещение о начислении.</div>
+            </div>
+          </div>
+          <div class="integration-card reveal reveal-delay-2">
+            <div class="integration-card__icon" style="background:#E8FFF0;color:#00A844">☁️</div>
+            <div>
+              <div class="integration-card__title">Mail.ru Облако</div>
+              <div class="integration-card__desc">Оплата подписок на дополнительный объём. Автопополнение при недостатке места. Кешбэк 5% на тарифы Облако Pro.</div>
+            </div>
+          </div>
+          <div class="integration-card reveal reveal-delay-3">
+            <div class="integration-card__icon" style="background:#FFF3E0;color:#FF9500">📅</div>
+            <div>
+              <div class="integration-card__title">Mail.ru Календарь</div>
+              <div class="integration-card__desc">Привязка совместных трат к событиям. Напоминания о платежах и авто-сбор денег с участников мероприятия.</div>
+            </div>
+          </div>
+          <div class="integration-card reveal reveal-delay-1">
+            <div class="integration-card__icon" style="background:#F0E8FF;color:#7C3AED">💬</div>
+            <div>
+              <div class="integration-card__title">VK Мессенджер</div>
+              <div class="integration-card__desc">Переводы прямо в чатах ВКонтакте и Mail.ru. Разделение счёта на нескольких участников в один клик.</div>
+            </div>
+          </div>
+          <div class="integration-card reveal reveal-delay-2">
+            <div class="integration-card__icon" style="background:#FFE8E8;color:#FF3B30">🎨</div>
+            <div>
+              <div class="integration-card__title">МегаМаркет</div>
+              <div class="integration-card__desc">Оплата покупок с кешбэком до 5%. Расширенная гарантия и мгновенный возврат средств на кошелёк при отмене.</div>
+            </div>
+          </div>
+          <div class="integration-card reveal reveal-delay-3">
+            <div class="integration-card__icon" style="background:#E0F7F5;color:#0D9488">🎵</div>
+            <div>
+              <div class="integration-card__title">VK Музыка + Стриминг</div>
+              <div class="integration-card__desc">Единый биллинг подписок на музыку, кино и сервисы. Семейные подписки с общим бюджетом.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Отзывы</span>
+          <h2 class="section__title">Что говорят пользователи</h2>
+          <p class="section__desc">Реальные отзывы людей, которые уже перешли на Mail Кошелёк.</p>
+        </div>
+        <div class="testimonials__grid">
+          <div class="testimonial-card reveal reveal-delay-1">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text">«Квитанция за ЖКХ пришла на почту — и я оплатила её прямо там, одним нажатием. Раньше нужно было копировать реквизиты и идти в банк. Экономлю 15 минут в месяц!»</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" style="background:#0077FF">АМ</div>
+              <div>
+                <div class="testimonial-card__author-name">Анна Михайлова</div>
+                <div class="testimonial-card__author-role">Дизайнер, Москва</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal reveal-delay-2">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text">«Создала событие в Календаре — Кошелёк сам прислал уведомления участникам и собрал деньги за аренду дачи. Наконец-то не нужно напоминать каждому!»</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" style="background:#00A844">ДК</div>
+              <div>
+                <div class="testimonial-card__author-name">Дмитрий Козлов</div>
+                <div class="testimonial-card__author-role">Разработчик, Санкт-Петербург</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal reveal-delay-3">
+            <div class="testimonial-card__stars">★★★★☆</div>
+            <p class="testimonial-card__text">«Управляю всеми подписками из одного места: Облако, Музыка, Стриминг. Кешбэк окупает тариф Плюс за два месяца. Аналитика расходов — топ.»</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" style="background:#FF9500">ЕС</div>
+              <div>
+                <div class="testimonial-card__author-name">Елена Соколова</div>
+                <div class="testimonial-card__author-role">Менеджер, Казань</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / DOWNLOAD -->
+    <section class="section section--gradient" id="download">
+      <div class="container">
+        <div class="cta-box reveal">
+          <h2 class="cta-box__title">Финансы экосистемы Mail — в одном месте</h2>
+          <p class="cta-box__desc">Откройте Mail Кошелёк и получите 500 бонусных рублей. Доступно для всех 94 млн пользователей Mail.ru.</p>
+          <div class="cta-box__buttons">
+            <a href="cabinet.html" class="cta-box__store-btn">
+              <svg viewBox="0 0 28 28" fill="white"><path d="M21.5 13.3c0-.1 0-.2 0-.3h.1V6.5c0-1.2-1-2.2-2.2-2.2h-11c-1.2 0-2.2 1-2.2 2.2v6.5h.1c0 .1 0 .2 0 .3 0 4 3.2 7.3 7.1 7.5v2.7h-2.5c-.3 0-.5.2-.5.5s.2.5.5.5h6c.3 0 .5-.2.5-.5s-.2-.5-.5-.5h-2.5v-2.7c3.9-.2 7.1-3.5 7.1-7.5zM8 8.5a.5.5 0 011 0v2a.5.5 0 01-1 0v-2zm5 8c-3.5 0-6.4-2.8-6.5-6.3h13c-.1 3.5-3 6.3-6.5 6.3zm1.5-8a.5.5 0 011 0v2a.5.5 0 01-1 0v-2z"/><path d="M18 7h-1V5h1a.5.5 0 000-1h-1V2.5a.5.5 0 00-1 0V6h-1V2.5a.5.5 0 00-1 0V6h-1V2.5a.5.5 0 00-1 0V6h-1V2.5a.5.5 0 00-1 0V6H9V2.5a.5.5 0 00-1 0V6H7V2.5a.5.5 0 00-1 0V6H5V2.5a.5.5 0 10-1 0V7" opacity=".5"/></svg>
+              <div class="cta-box__store-btn-text">
+                <small>Загрузите в</small>
+                <strong>App Store</strong>
+              </div>
+            </a>
+            <a href="cabinet.html" class="cta-box__store-btn">
+              <svg viewBox="0 0 28 28" fill="white"><path d="M3.6 19.5L15.4 25c.3.2.7.2 1 0l11.8-5.5c.6-.3.6-1.1 0-1.4L16.4 12.7c-.3-.2-.7-.2-1 0L3.6 18.1c-.6.3-.6 1.1 0 1.4zM3.6 22.5l12 5.3c.3.1.6.1.9 0l12-5.3c.4-.2.5-.6.3-1s-.7-.5-1.1-.3l-11.6 5.1-11.6-5.1c-.4-.2-.8 0-1.1.3s-.1.8.3 1z"/><path d="M15.4 10.5L3.6 5C3 4.7 3 3.9 3.6 3.6L15.4 9c.3.2.7.2 1 0l11.8-5.5c.6-.3.6-1.1 0-1.4L16.4.1c-.3-.2-.7-.2-1 0L3.6 5.5c-.6.3-.6 1.1 0 1.4l12 5.3c.3.2.6.2.9 0z" opacity=".7"/></svg>
+              <div class="cta-box__store-btn-text">
+                <small>Доступно в</small>
+                <strong>Google Play</strong>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--gray" id="faq">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">FAQ</span>
+          <h2 class="section__title">Частые вопросы</h2>
+          <p class="section__desc">Ответы на самые популярные вопросы о Mail Кошелёк.</p>
+        </div>
+        <div class="faq__list">
+          <div class="faq-item reveal">
+            <button class="faq-item__header">
+              Как открыть кошелёк Mail Кошелёк?
+              <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-item__body">
+              <div class="faq-item__content">Достаточно войти через аккаунт Mail.ru, указать ФИО и номер телефона. Регистрация занимает меньше 2 минут. После этого вы сможете пополнять баланс и совершать платежи.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__header">
+              Сколько стоит обслуживание?
+              <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-item__body">
+              <div class="faq-item__content">Базовый тариф — полностью бесплатный. Тариф Плюс стоит 199 ₽/мес, Премиум — 499 ₽/мес. При оплате за год действует скидка 17%. Все тарифы включают бесплатные переводы между кошельками Mail.ru.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__header">
+              Как работает кешбэк?
+              <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-item__body">
+              <div class="faq-item__content">Кешбэк начисляется автоматически при оплате покупок у партнёров картой Mail Кошелёк. Размер кешбэка зависит от тарифа: до 3% на Базовом, до 10% на Плюс и до 15% на Премиум. Возврат приходит в течение 24 часов.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__header">
+              Можно ли перевести деньги на банковскую карту?
+              <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-item__body">
+              <div class="faq-item__content">Да, вывод на любую банковскую карту РФ доступен для всех тарифов. Комиссия 0% при выводе от 3 000 ₽, при меньших суммах — 1.5%. Деньги приходят мгновенно в 95% случаев.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__header">
+              Безопасно ли использовать Mail Кошелёк?
+              <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-item__body">
+              <div class="faq-item__content">Абсолютно. Мы используем 256-битное шифрование, двухфакторную аутентификацию, 3D Secure 2.0 и работаем под контролем Центробанка. Сервис лицензирован и застрахован. Средства защищены государством на сумму до 1.4 млн ₽.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__header">
+              Как работает оплата прямо из письма?
+              <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-item__body">
+              <div class="faq-item__content">Когда на ваш адрес Mail.ru приходит письмо со счётом или квитанцией, ИИ автоматически распознаёт платёжные реквизиты, сумму и получателя. Над письмом появляется кнопка «Оплатить из Кошелька» — одно нажатие, и платёж отправлен. Поддерживаются ЖКХ, мобильная связь, интернет, штрафы и более 500 типов документов.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="#" class="header__logo" style="color:#fff;margin-bottom:8px;display:inline-flex">
+            <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="#0077FF"/><path d="M10 24V12.5C10 11.67 10.67 11 11.5 11H18L22 15H24.5C25.33 15 26 15.67 26 16.5V24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 24H26" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="18" cy="19" r="2.5" fill="white" opacity="0.9"/></svg>
+            Mail <span>Кошелёк</span>
+          </a>
+          <p class="footer__brand-desc">Умный финансовый сервис в экосистеме Mail.ru.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social" aria-label="VK">VK</a>
+            <a href="#" class="footer__social" aria-label="Telegram">TG</a>
+            <a href="#" class="footer__social" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+        <div class="footer__col"><div class="footer__col-title">Продукт</div><a href="#features">Возможности</a><a href="#cards">Тарифы</a><a href="#security">Безопасность</a><a href="#integrations">Интеграции</a></div>
+        <div class="footer__col"><div class="footer__col-title">Компания</div><a href="#">О нас</a><a href="#">Карьера</a><a href="#">Блог</a></div>
+        <div class="footer__col"><div class="footer__col-title">Поддержка</div><a href="#faq">FAQ</a><a href="#">Помощь</a><a href="#">Обратная связь</a></div>
+        <div class="footer__col"><div class="footer__col-title">Документы</div><a href="#">Лицензия ЦБ</a><a href="#">Условия</a><a href="#">Конфиденциальность</a></div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 Mail Кошелёк, VK. Демо для хакатона.</div>
+        <div class="footer__bottom-links"><a href="#">Конфиденциальность</a><a href="#">Условия</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
